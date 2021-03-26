@@ -44,8 +44,8 @@ function getRomawi($bln)
 $this->load->library('pdf');
 $pdf = new FPDF('P', 'mm', 'A4');
 $pdf->AddPage();
-$pdf->SetTitle('Cetak - Surat Keterangan Kelakuan Baik');
-$pdf->SetSubject('Surat Keterangan Kelakuan Baik');
+$pdf->SetTitle('Cetak - Surat Keterangan Usaha');
+$pdf->SetSubject('Surat Keterangan Usaha');
 $pdf->SetMargins(15, 18, 15, 18);
 
 //Kop surat
@@ -75,7 +75,7 @@ $pdf->AddFont('Calbold', '', 'calbold.php');
 $pdf->SetFont('Calbold', 'U', 14);
 $pdf->setY(40);
 $pdf->setX(22);
-$pdf->Cell(0, 6, 'SURAT PENGANTAR CATATAN KEPOLISIAN', 0, 1, 'C');
+$pdf->Cell(0, 6, 'SURAT KETERANGAN USAHA', 0, 1, 'C');
 $pdf->AddFont('Calreg', '', 'calreg.php');
 $pdf->SetFont('Calreg', '', 12);
 $pdf->setY(45);
@@ -92,7 +92,7 @@ $pdf->Cell('0', 6, 'Kabupaten GARUT, menerangkan dengan sebernarnya bahwa :', 0,
 $pdf->ln(8);
 
 // // Isi Tabel
-foreach ($sk_kelakuanbaik as $surat) {
+foreach ($sk_usaha as $surat) {
     $pdf->SetFont('Calreg', '', 12);
     $pdf->setY(73);
     $pdf->setX(30);
@@ -234,95 +234,48 @@ foreach ($sk_kelakuanbaik as $surat) {
     $pdf->setY(153);
     $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-   
-    $pdf->setY(153);
-    $pdf->setX(84);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, $surat->alamat , 0, 1, 'L');
-    
-    $pdf->setY(153);
-    $pdf->setX(140);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6,'RT ' . $surat->RT, 0, 1, 'L');
-    
-    $pdf->setY(153);
-    $pdf->setX(150);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6,'RW ' . $surat->RW, 0, 1, 'L');
-    
+    $pdf->Cell(0, 6, $surat->alamat . ' RT ' . $surat->rt . ' RW ' . $surat->rw, 0, 1, 'L');
     $pdf->setY(161);
     $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Desa ' . $surat->desa , 0, 1, 'L');
-    $pdf->ln(10);
-    
-    $pdf->setY(161);
-    $pdf->setX(140);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Kecamatan ' . $surat->kecamatan, 0, 1, 'L');
-    $pdf->ln(10);
-    
-    $pdf->setY(169);
-    $pdf->setX(84);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Kabupaten ' . $surat->kab_kota , 0, 1, 'L');
-    $pdf->ln(10);
-    
-    $pdf->setY(169);
-    $pdf->setX(140);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Provinsi ' . $surat->provinsi, 0, 1, 'L');
+    $pdf->Cell(247, 6, 'Kel. ' . $surat->desa . ' Kec. ' . $surat->kecamatan . ' Kab. ' . $surat->kab_kota, 0, 1, 'L');
     $pdf->ln(10);
 
     //penutup
-    $pdf->setY(176);
+    $pdf->setY(171);
     $pdf->setX(30);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, 'Berdasarkan keterangan RT/RW setempat dan sepengetahuan kami selama jadi warga Desa', 0, 1, 'L');
-    $pdf->setY(182);
+    $pdf->Cell(0, 6, 'Berdasarkan pengetahuan kami dan data yang benar bahwa yang bersangkutan Penduduk Desa', 0, 1, 'L');
+    $pdf->setY(180);
     $pdf->setX(9);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, 'KARYAMUKTI yang bersangkutan :', 0, 1, 'L');
+    $pdf->Cell(0, 6, 'KARYAMUKTI Kecamatan CIBATU dan pada saat ini yang bersangkutan  benar  mempunyai  usaha  BENGKEL LAS', 0, 1, 'L');
     // $pdf->setY(188);
     // $pdf->setX(9);
     // $pdf->SetFont('Calreg', '', 12);
     // $pdf->Cell(0, 6, 'dsads.', 0, 1, 'L');
 
-    $pdf->setY(189);
+    $pdf->setY(188);
     $pdf->setX(30);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, '1. Mempunyai sikap dan perilaku yang baik', 0, 0, 'L');
-    // $pdf->setY(188);
-    // $pdf->SetX(166);
+    $pdf->Cell(0, 6, 'Surat    keterangan    ini     dipergunakan     untuk     Melengkapi    persyaratan  ', 0, 0, 'L');
+    $pdf->setY(188);
+    $pdf->SetX(166);
+    $pdf->SetFont('Calbold', '', 12);
+    $pdf->Cell(0, 6, $surat->keperluan , 0, 1, 'L');
+    // $pdf->setY(196);
+    // $pdf->setX(9);
     // $pdf->SetFont('Calbold', '', 12);
-    // $pdf->Cell(0, 6, $surat->keperluan , 0, 1, 'L');
-    $pdf->setY(196);
-    $pdf->setX(30);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, '2. Tidak pernah terlibat dalam kegiatan yang menentang Pancasila dan UUD 1945', 0, 1, 'L');
+    // $pdf->Cell(0, 6, 'DI PERUM BUKIT BIDURI INDAH.', 0, 1, 'L');
 
     $pdf->setY(204);
     $pdf->setX(30);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, '3. Tidak pernah melakukan tindakan yang melanggar hukum baik pidana maupun perdata', 0, 1, 'L');
+    $pdf->Cell(0, 6, 'Demikian    keterangan   ini   kami   berikan    kepada   yang   berkepentingan   untuk   dipergunakan ', 0, 1, 'L');
     $pdf->setY(212);
-    $pdf->setX(30);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, '4. TIdak pernah terlibat narkoba', 0, 1, 'L');
-    $pdf->ln(30);
-    
-    $pdf->setY(220);
-    $pdf->setX(30);
-    $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, 'Surat Keterangan ini dipergunakan untuk : ' , 0, 1, 'L');
-    $pdf->setY(220);
-    $pdf->setX(105);
-    $pdf->SetFont('Calbold', '', 12);
-    $pdf->Cell(0, 6,$surat->keperluan , 0, 1, 'L');
-    $pdf->setY(228);
     $pdf->setX(9);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, 'Demikian keterangan ini,untuk dipergunakan sebagaimana mestinya.', 0, 1, 'L');
+    $pdf->Cell(0, 6, 'sebagaimana mestinya.', 0, 1, 'L');
     $pdf->ln(30);
 
     //titimangsa
@@ -345,27 +298,6 @@ foreach ($sk_kelakuanbaik as $surat) {
     $pdf->setY(271);
     $pdf->setX(125);
     $pdf->Cell(20, 5, 'NIP. 6969696969', 0, 0);
-
-    //CAMAT
-    $pdf->SetFont('Times', '', 11);
-    $pdf->setY(243);
-    $pdf->setX(40);
-    $pdf->Cell(20, 5, "Mengetahui :", 0, 0);
-    
-    $pdf->SetFont('Times', '', 11);
-    $pdf->setY(248);
-    $pdf->setX(30);
-    $pdf->Cell(20, 5, "Reg.No :............................. ", 0, 0);
-    
-    $pdf->SetFont('Times', '', 11);
-    $pdf->setY(253);
-    $pdf->setX(40);
-    $pdf->Cell(20, 5, "CAMAT CIBATU ", 0, 0);
-   
-    $pdf->SetFont('Times', '', 11);
-    $pdf->setY(271);
-    $pdf->setX(30);
-    $pdf->Cell(20, 5, "NIP : ", 0, 0);
 }
 
 $pdf->Output();

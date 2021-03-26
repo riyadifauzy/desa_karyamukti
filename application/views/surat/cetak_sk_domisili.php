@@ -233,26 +233,56 @@ foreach ($sk_domisili as $surat) {
     $pdf->Cell(0, 6, ' :', 0, 0, 'L');
     $pdf->setY(153);
     $pdf->setX(84);
+    $pdf->setY(153);
+    $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, $surat->alamat . ' RT ' . $surat->rt . ' RW ' . $surat->rw, 0, 1, 'L');
+    $pdf->Cell(0, 6, $surat->alamat , 0, 1, 'L');
+    
+    $pdf->setY(153);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(0, 6,'RT ' . $surat->rt, 0, 1, 'L');
+    
+    $pdf->setY(153);
+    $pdf->setX(150);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(0, 6,'RW ' . $surat->rw, 0, 1, 'L');
+    
     $pdf->setY(161);
     $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Kel. ' . $surat->desa . ' Kec. ' . $surat->kecamatan . ' Kab. ' . $surat->kab_kota, 0, 1, 'L');
+    $pdf->Cell(247, 6, 'Desa ' . $surat->desa , 0, 1, 'L');
     $pdf->ln(10);
-
+    
+    $pdf->setY(161);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Kecamatan ' . $surat->kecamatan, 0, 1, 'L');
+    $pdf->ln(10);
+    
+    $pdf->setY(169);
+    $pdf->setX(84);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Kabupaten ' . $surat->kab_kota , 0, 1, 'L');
+    $pdf->ln(10);
+    
+    $pdf->setY(169);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Provinsi ' . $surat->provinsi, 0, 1, 'L');
+    $pdf->ln(10);
     //penutup
-    $pdf->setY(171);
+    $pdf->setY(177);
     $pdf->setX(30);
     $pdf->SetFont('Calreg', '', 12);
     $pdf->Cell(0, 6, 'Berdasarkan keterangan dari RT/RW setempat benar bahwa yang bersangkutan Penduduk', 0, 1, 'L');
-    $pdf->setY(180);
+    $pdf->setY(184);
     $pdf->setX(9);
     $pdf->SetFont('Calreg', '', 12);
     $pdf->Cell(0, 6, 'Desa KARYAMUKTI Kecamatan CIBATU dan sepengetahuan kami bahwa yang bersangkutan : ', 0, 1, 'L');
  
 
-    $pdf->setY(192);
+    $pdf->setY(194);
     $pdf->setX(70);
     $pdf->SetFont('Calbold', '', 12);
     $pdf->Cell(0, 6, '== Benar berdomisili di alamat tersebut ==', 0, 0, 'L');

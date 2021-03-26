@@ -234,36 +234,65 @@ foreach ($sk_tidakmampu as $surat) {
     $pdf->setY(153);
     $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(0, 6, $surat->alamat . ' RT ' . $surat->rt . ' RW ' . $surat->rw, 0, 1, 'L');
+    $pdf->Cell(0, 6, $surat->alamat , 0, 1, 'L');
+    
+    $pdf->setY(153);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(0, 6,'RT ' . $surat->rt, 0, 1, 'L');
+    
+    $pdf->setY(153);
+    $pdf->setX(150);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(0, 6,'RW ' . $surat->rw, 0, 1, 'L');
+    
     $pdf->setY(161);
     $pdf->setX(84);
     $pdf->SetFont('Calreg', '', 12);
-    $pdf->Cell(247, 6, 'Kel. ' . $surat->desa . ' Kec. ' . $surat->kecamatan . ' Kab. ' . $surat->kab_kota, 0, 1, 'L');
+    $pdf->Cell(247, 6, 'Desa ' . $surat->desa , 0, 1, 'L');
+    $pdf->ln(10);
+    
+    $pdf->setY(161);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Kecamatan ' . $surat->kecamatan, 0, 1, 'L');
+    $pdf->ln(10);
+    
+    $pdf->setY(169);
+    $pdf->setX(84);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Kabupaten ' . $surat->kab_kota , 0, 1, 'L');
+    $pdf->ln(10);
+    
+    $pdf->setY(169);
+    $pdf->setX(140);
+    $pdf->SetFont('Calreg', '', 12);
+    $pdf->Cell(247, 6, 'Provinsi ' . $surat->provinsi, 0, 1, 'L');
     $pdf->ln(10);
 
     //penutup
-    $pdf->setY(171);
+    $pdf->setY(178);
     $pdf->setX(30);
     $pdf->SetFont('Calreg', '', 12);
     $pdf->Cell(0, 6, 'Berdasarkan pengantar dari RT/RW setempat dan data yang ada benar bahwa yang bersangkutan', 0, 1, 'L');
-    $pdf->setY(180);
+    $pdf->setY(184);
     $pdf->setX(9);
     $pdf->SetFont('Calreg', '', 12);
     $pdf->Cell(0, 6, 'Penduduk Desa KARYAMUKTI Kecamatan CIBATU dan : ', 0, 1, 'L');
  
 
-    $pdf->setY(188);
+    $pdf->setY(191);
     $pdf->setX(30);
     $pdf->SetFont('Calbold', '', 12);
     $pdf->Cell(0, 6, '==yang bersangkutan tergolong keluarga yang tidak mampu (berpenghasilan rendah)', 0, 0, 'L');
-    $pdf->setY(196);
-    $pdf->SetX(80);
+    $pdf->setY(198);
+    $pdf->SetX(70);
     $pdf->SetFont('Calbold', '', 12);
     $pdf->Cell(0, 6, 'karena tidak mempunyai penghasilan tetap==' , 0, 1, 'L');
    
 
-    $pdf->setY(204);
-    $pdf->setX(30);
+    $pdf->setY(206);
+    $pdf->setX(9);
     $pdf->SetFont('Calreg', '', 12);
     $pdf->Cell(0, 6,'Surat Keterangan ini di pergunakan untuk :', 0, 1, 'L');
     $pdf->setY(212);

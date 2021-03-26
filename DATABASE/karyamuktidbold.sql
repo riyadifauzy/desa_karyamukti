@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Mar 2021 pada 16.33
+-- Waktu pembuatan: 26 Mar 2021 pada 05.26
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -1177,7 +1177,7 @@ CREATE TABLE `sk_belummenikah` (
   `desa` varchar(50) NOT NULL,
   `rt` int(50) NOT NULL,
   `rw` int(50) NOT NULL,
-  `alamat` varchar(125) NOT NULL,
+  `alamat` int(125) NOT NULL,
   `keperluan` varchar(50) NOT NULL,
   `jenis_surat` varchar(50) NOT NULL,
   `tgl_ajukan_surat` date NOT NULL,
@@ -1194,7 +1194,7 @@ CREATE TABLE `sk_belummenikah` (
 --
 
 INSERT INTO `sk_belummenikah` (`id_surat_belummenikah`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `pendidikan`, `nama_ortu`, `status_perkawinan`, `provinsi`, `no_kk`) VALUES
-(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat Keterangan Belum Menikah', '2021-03-26', 'Diterima', 'S1', 'Yayan Suharyana', 'Belum Kawin', 'Jawa Barat', '123');
+(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 0, 'kp', 'Surat Keterangan Belum Menikah', '2021-03-17', 'Diterima', 'S1', 'YAYAN SUHARYANA', 'BELUM KAWIN', '', '123');
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1233,7 @@ CREATE TABLE `sk_domisili` (
 --
 
 INSERT INTO `sk_domisili` (`id_surat_domisili`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`) VALUES
-(3, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harga', 'Kerja Praktek', 'Surat Keterangan Domisili', '2021-03-26', 'Diterima', '123', 'S1', 'Belum Kawin', 'Yayan Suharyana', 'Jawa Barat');
+(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'kp', 'Surat Keterangan Domisili', '2021-03-17', 'Pending', '123', 'S1', 'BELUM KAWIN', 'YAYAN SUHARYANA', '');
 
 -- --------------------------------------------------------
 
@@ -1283,7 +1283,7 @@ CREATE TABLE `sk_kelahiran` (
 --
 
 INSERT INTO `sk_kelahiran` (`id_surat_kelahiran`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `hari_lahir`, `waktu_lahir`, `tempat_lahir_anak`, `tanggal_lahir_anak`, `jenis_kelamin_anak`, `nama_anak`, `berat_anak`, `panjang_anak`, `anak_ke`, `nama_ibu`, `umur_ibu`, `nama_ayah`, `umur_ayah`, `sklahir`) VALUES
-(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat Kelahiran', '2021-03-26', 'Diterima', '123', 'S1', 'Minggu', '00.12', 'Garut', '2021-03-03', 'Laki - Laki', 'Coro', '1', '20', '3', 'Marsinah', '29', 'UUD', '30', '');
+(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'kp', 'Surat Kelahiran', '2021-03-17', 'Pending', '123', 'S1', 'Rabu', '01.00 Wib', 'Bandung', '2021-03-02', 'Laki - Laki', 'Tri', '2', '60', '3', 'Tina Agustina', '22', 'Yayan Suharyana', '25', '');
 
 -- --------------------------------------------------------
 
@@ -1322,7 +1322,7 @@ CREATE TABLE `sk_kelakuanbaik` (
 --
 
 INSERT INTO `sk_kelakuanbaik` (`id_surat_kelakuanbaik`, `no_nik`, `no_kk`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `RT`, `RW`, `alamat`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`, `keperluan`) VALUES
-(1, '123456', 123, 'Tri Kurnia Sandi', 'Laki - Laki', 'Bandung', '1999-12-05', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Surat Keterangan Kelakuan Baik', '2021-03-26', 'Diterima', 'S1', 'Belum Kawin', 'Yayan Suharyana', 'Jawa Barat', 'Kerja Praktek');
+(1, '123456', 123, 'Tri Kurnia Sandi', 'Laki - Laki', 'Bandung', '1999-12-05', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Surat Keterangan Kelakuan Baik', '2021-03-17', 'Pending', 'S1', 'BELUM KAWIN', 'YAYAN SUHARYANA', '', 'kp');
 
 -- --------------------------------------------------------
 
@@ -1375,7 +1375,7 @@ CREATE TABLE `sk_kematian` (
 --
 
 INSERT INTO `sk_kematian` (`id_surat_kematian`, `no_nik`, `no_kk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk_wafat`, `pendidikan`, `hari_wafat`, `waktu_wafat`, `tempat_wafat`, `tanggal_wafat`, `jenis_kelamin_wafat`, `nama_wafat`, `no_nik_wafat`, `tgl_lahir_wafat`, `agama_wafat`, `alamat_wafat`, `provinsi_wafat`, `kecamatan_wafat`, `desa_wafat`, `kab_kota_wafat`, `rt_wafat`, `rw_wafat`) VALUES
-(1, 123456, 123, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat kematian', '2021-03-26', 'Diterima', '321', 'S1', 'Minggu', '00.12', 'Rumah', '2021-03-10', 'Laki - Laki', 'Coro', 123, '2021-03-08', 'Islam', 'Rel Kereta', 'Jawabarat', 'Karangpawitan', 'Suci', 'Garut', 2, 3);
+(1, 123456, 123, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'kp', 'Surat kematian', '2021-03-17', 'Pending', '321321', 'S1', 'Minggu', '12.00', 'Rumah', '2021-03-11', 'Laki - Laki', 'Asep', 123123, '2021-03-04', 'Islam', 'bdg', 'Jawa Barat', 'Cibatu', 'dfsdfsd', 'Kota Bandug', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -1427,7 +1427,7 @@ CREATE TABLE `sk_pindah` (
 --
 
 INSERT INTO `sk_pindah` (`id_surat_pindah`, `no_nik`, `no_kk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `pendidikan`, `alamat_tujuan`, `provinsi_tujuan`, `kecamatan_tujuan`, `desa_tujuan`, `kab_kota_tujuan`, `rt_tujuan`, `rw_tujuan`, `nama_kk`, `provinsi`, `pos`, `alasan_pindah`, `jenis_pindah`, `status_kk_tpindah`, `status_kk_pindah`, `kel_pindah`, `pos_tujuan`) VALUES
-(1, 123456, 123, 'Tri Kurnia Sandi', '', '0000-00-00', '', '', '', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', '', 'Surat Pindah', '2021-03-26', 'Diterima', '', 'Cinangka ', 'Jawa Barat', 'Ujungberung', 'Pasirwangi', 'Bandung', 1, 2, 'Dug', 'Jawa Barat', '40618', '1.Pekerjaan', '2.Kepala & Seluruh Anggota', '2.KK Baru', '2.Membuat KK Baru', 'Dug', '40621');
+(2, 123456, 123, 'Tri Kurnia Sandi', '', '0000-00-00', '', '', '', 'Kota Bandug', 'Ujungberung', 'Pasirwangi', 3, 5, 'bdg', '', 'Surat Pindah', '2021-03-17', 'Diterima', '', 'bdg', 'Jawa Barat', 'uber', 'cnk', 'Kota Bandug', 2, 3, 'Tri K', 'Jawa Barat', '31324', '3.Keamanan', '3.Kepala & Sebagian Anggota', '1.Tetap', '1.Numpang KK', 'dug', '31324');
 
 -- --------------------------------------------------------
 
@@ -1449,7 +1449,7 @@ CREATE TABLE `sk_serba` (
   `desa` varchar(50) NOT NULL,
   `rt` int(50) NOT NULL,
   `rw` int(50) NOT NULL,
-  `alamat` varchar(125) NOT NULL,
+  `alamat` int(125) NOT NULL,
   `keperluan` varchar(50) NOT NULL,
   `jenis_surat` varchar(50) NOT NULL,
   `tgl_ajukan_surat` date NOT NULL,
@@ -1466,7 +1466,7 @@ CREATE TABLE `sk_serba` (
 --
 
 INSERT INTO `sk_serba` (`id_surat_serba`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`) VALUES
-(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat Keterangan Serba Guna', '2021-03-26', 'Diterima', '123', 'S1', 'Belum Kawin', 'Yayan Suharyana', '');
+(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 0, 'kp', 'Surat Keterangan Serba Guna', '2021-03-17', 'Pending', '123', 'S1', 'BELUM KAWIN', 'YAYAN SUHARYANA', '');
 
 -- --------------------------------------------------------
 
@@ -1488,7 +1488,7 @@ CREATE TABLE `sk_tidakmampu` (
   `desa` varchar(50) NOT NULL,
   `rt` int(50) NOT NULL,
   `rw` int(50) NOT NULL,
-  `alamat` varchar(125) NOT NULL,
+  `alamat` int(125) NOT NULL,
   `keperluan` varchar(50) NOT NULL,
   `jenis_surat` varchar(50) NOT NULL,
   `tgl_ajukan_surat` date NOT NULL,
@@ -1497,7 +1497,7 @@ CREATE TABLE `sk_tidakmampu` (
   `pendidikan` varchar(50) NOT NULL,
   `status_perkawinan` varchar(50) NOT NULL,
   `nama_ortu` varchar(50) NOT NULL,
-  `provinsi` varchar(50) NOT NULL
+  `provinsi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1505,7 +1505,7 @@ CREATE TABLE `sk_tidakmampu` (
 --
 
 INSERT INTO `sk_tidakmampu` (`id_surat_tidakmampu`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`) VALUES
-(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat Keterangan Tidak Mampu', '2021-03-26', 'Diterima', '123', 'S1', 'Belum Kawin', 'Yayan Suharyana', 'Jawa Barat');
+(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 0, 'kp', 'Surat Keterangan Tidak Mampu', '2021-03-17', 'Pending', '123', 'S1', 'BELUM KAWIN', 'YAYAN SUHARYANA', 0);
 
 -- --------------------------------------------------------
 
@@ -1527,7 +1527,7 @@ CREATE TABLE `sk_usaha` (
   `desa` varchar(50) NOT NULL,
   `rt` int(50) NOT NULL,
   `rw` int(50) NOT NULL,
-  `alamat` varchar(125) NOT NULL,
+  `alamat` int(125) NOT NULL,
   `keperluan` varchar(50) NOT NULL,
   `jenis_surat` varchar(50) NOT NULL,
   `tgl_ajukan_surat` date NOT NULL,
@@ -1536,18 +1536,15 @@ CREATE TABLE `sk_usaha` (
   `pendidikan` varchar(50) NOT NULL,
   `status_perkawinan` varchar(50) NOT NULL,
   `nama_ortu` varchar(50) NOT NULL,
-  `provinsi` varchar(50) NOT NULL,
-  `nama_usaha` varchar(150) NOT NULL,
-  `alamat_usaha` varchar(150) NOT NULL,
-  `penghasilan` varchar(150) NOT NULL
+  `provinsi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `sk_usaha`
 --
 
-INSERT INTO `sk_usaha` (`id_surat_usaha`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`, `nama_usaha`, `alamat_usaha`, `penghasilan`) VALUES
-(1, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 'Komplek Cinangka Harja', 'Kerja Praktek', 'Surat Keterangan Usaha', '2021-03-26', 'Diterima', '123', 'S1', 'Belum Kawin', 'Yayan Suharyana', 'Jawa Barat', 'Warnet', 'Bandung', 'Rp. 2.500.000');
+INSERT INTO `sk_usaha` (`id_surat_usaha`, `no_nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `pekerjaan`, `kab_kota`, `kecamatan`, `desa`, `rt`, `rw`, `alamat`, `keperluan`, `jenis_surat`, `tgl_ajukan_surat`, `status_surat`, `no_kk`, `pendidikan`, `status_perkawinan`, `nama_ortu`, `provinsi`) VALUES
+(7, 123456, 'Tri Kurnia Sandi', 'Bandung', '1999-12-05', 'Laki - Laki', 'Islam', 'Mahasiswa', 'Bandung', 'Ujungberung', 'Pasirwangi', 3, 5, 0, 'kp', 'Surat Keterangan Usaha', '2021-03-17', 'Diterima', '123', 'S1', 'BELUM KAWIN', 'YAYAN SUHARYANA', '');
 
 -- --------------------------------------------------------
 
@@ -3046,8 +3043,7 @@ INSERT INTO `statistik` (`ip`, `tanggal`, `hits`, `online`) VALUES
 ('::1', '2021-03-22', 41, '1616415423'),
 ('::1', '2021-03-23', 13, '1616477974'),
 ('::1', '2021-03-24', 20, '1616605119'),
-('::1', '2021-03-25', 98, '1616674812'),
-('::1', '2021-03-26', 1, '1616767995');
+('::1', '2021-03-25', 98, '1616674812');
 
 -- --------------------------------------------------------
 
@@ -3912,7 +3908,7 @@ ALTER TABLE `sk_belummenikah`
 -- AUTO_INCREMENT untuk tabel `sk_domisili`
 --
 ALTER TABLE `sk_domisili`
-  MODIFY `id_surat_domisili` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_surat_domisili` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `sk_kelahiran`
@@ -3936,7 +3932,7 @@ ALTER TABLE `sk_kematian`
 -- AUTO_INCREMENT untuk tabel `sk_pindah`
 --
 ALTER TABLE `sk_pindah`
-  MODIFY `id_surat_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_surat_pindah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `sk_serba`
@@ -3954,7 +3950,7 @@ ALTER TABLE `sk_tidakmampu`
 -- AUTO_INCREMENT untuk tabel `sk_usaha`
 --
 ALTER TABLE `sk_usaha`
-  MODIFY `id_surat_usaha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_surat_usaha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `socmed`
